@@ -82,7 +82,7 @@ def apply_mask(image, mask, color, alpha=0.5):
 
 
 def display_instances(image, boxes, masks, class_ids, class_names,
-                      scores=None, title="",
+                      scores=None, title="", color="random"
                       figsize=(16, 16), ax=None):
     """
     boxes: [num_instance, (y1, x1, y2, x2, class_id)] in image coordinates.
@@ -103,8 +103,11 @@ def display_instances(image, boxes, masks, class_ids, class_names,
         _, ax = plt.subplots(1, figsize=figsize)
 
     # Generate random colors --------------------------------------------------------------------------------------------<
-    hsv = [(random.random(), 1, 1.0) for _ in range(N)]
-    colors = list(map(lambda c: colorsys.hsv_to_rgb(*c), hsv))
+    if color == "random":
+      colors = random_colors(N)
+    else:
+      hsv = [(color, 1, 1.0) for _ in range(N)]
+      colors = list(map(lambda c: colorsys.hsv_to_rgb(*c), hsv))
 
     # Show area outside image boundaries.
     height, width = image.shape[:2]
