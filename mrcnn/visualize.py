@@ -151,10 +151,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
             p = Polygon(verts, facecolor="none", edgecolor=color)
             ax.add_patch(p)
     ax.imshow(masked_image.astype(np.uint8))
-    plt.savefig('image1.jpg',bbox_inches='tight', pad_inches=-0.5,orientation= 'landscape')
-    print(6)
-    with open("image1.jpg") as f:
-      print(f"{f} exists!!!")
+    plt.savefig('image1.jpg',bbox_inches='tight', orientation= 'landscape')
     plt.close()
     # ------------------------------------------------------------------------------------------------------<
     
