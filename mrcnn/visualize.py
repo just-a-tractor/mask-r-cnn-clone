@@ -102,8 +102,9 @@ def display_instances(image, boxes, masks, class_ids, class_names,
     if not ax:
         _, ax = plt.subplots(1, figsize=figsize)
 
-    # Generate random colors
-    colors = random_colors(N)
+    # Generate random colors --------------------------------------------------------------------------------------------<
+    hsv = [(random.random(), 1, 1.0) for _ in range(N)]
+    colors = list(map(lambda c: colorsys.hsv_to_rgb(*c), hsv))
 
     # Show area outside image boundaries.
     height, width = image.shape[:2]
