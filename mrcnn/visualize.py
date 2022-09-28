@@ -82,7 +82,7 @@ def apply_mask(image, mask, color, alpha=0.5):
 
 
 def display_instances(image, boxes, masks, class_ids, class_names,
-                      scores=None, title="", color="random",
+                      scores=None, title="", image_num = 1, color="random",
                       figsize=(16, 16), ax=None):
     """
     boxes: [num_instance, (y1, x1, y2, x2, class_id)] in image coordinates.
@@ -155,7 +155,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
             p = Polygon(verts, facecolor="none", edgecolor=color)
             ax.add_patch(p)
     ax.imshow(masked_image.astype(np.uint8))
-    plt.savefig('image1.jpg',bbox_inches='tight', orientation= 'landscape')
+    plt.savefig(f'image{image_num}.jpg',bbox_inches='tight', orientation= 'landscape')
     plt.close()
     # ------------------------------------------------------------------------------------------------------<
     
