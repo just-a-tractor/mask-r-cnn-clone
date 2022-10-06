@@ -44,7 +44,7 @@ class MappingChallengeDataset(utils.Dataset):
             if not os.path.exists(os.path.join(image_dir, self.coco.imgs[_img_id]['file_name'])):
                 print(image_dir)
                 print(self.coco.imgs[_img_id])
-                with open(self.coco.imgs[_img_id]['file_name']) as test_file1:
+                with open(image_dir + "\\" + self.coco.imgs[_img_id]['file_name']) as test_file1:
                     print(test_file1)
             assert(os.path.exists(os.path.join(image_dir, self.coco.imgs[_img_id]['file_name'])))
             self.add_image(
