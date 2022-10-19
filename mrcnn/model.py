@@ -19,10 +19,10 @@ import numpy as np
 import skimage.transform
 import tensorflow.compat.v1 as tf
 import tensorflow.keras as keras
-import tensorflow.keras.backend as K
-import tensorflow.keras.layers as KL
-import tensorflow.keras.engine as KE
-import tensorflow.keras.models as KM
+import keras.backend as K
+import keras.layers as KL
+import keras.engine as KE
+import keras.models as KM
 
 from mrcnn import utils
 
