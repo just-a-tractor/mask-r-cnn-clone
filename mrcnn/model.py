@@ -2011,7 +2011,8 @@ class MaskRCNN():
             mrcnn_class_logits, mrcnn_class, mrcnn_bbox =\
                 fpn_classifier_graph(rpn_rois, mrcnn_feature_maps, input_image_meta,
                                      config.POOL_SIZE, config.NUM_CLASSES,
-                                     train_bn=config.TRAIN_BN)
+                                     train_bn=config.TRAIN_BN,
+                                     fc_layers_size=config.FPN_CLASSIF_FC_LAYERS_SIZE)
 
             # Detections
             # output is [batch, num_detections, (y1, x1, y2, x2, class_id, score)] in 
