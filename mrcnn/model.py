@@ -18,11 +18,11 @@ import multiprocessing
 import numpy as np
 import skimage.transform
 import tensorflow.compat.v1 as tf
-import keras
-import keras.backend as K
-import keras.layers as KL
-import keras.engine as KE
-import keras.models as KM
+import tf.keras as keras
+import tf.keras.backend as K
+import tf.keras.layers as KL
+import tf.keras.engine as KE
+import tf.keras.models as KM
 
 from mrcnn import utils
 
